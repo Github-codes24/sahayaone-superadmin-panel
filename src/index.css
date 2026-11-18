@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #225091;
+  --color-brand-primary-dark: #193e73;
+  --color-brand-primary-hover: #2d6bbf;
+  --color-brand-light: #EAF2FB;
+  --color-brand-surface: #F4F8FD;
+
+  --color-brand-bg-page: #F7F9FC;
+  --color-brand-bg-card: #FFFFFF;
+  --color-brand-sidebar: #FFFFFF;
+  --color-brand-header: #225091;
+
+  --color-text-heading: #172B4D;
+  --color-text-body: #344054;
+  --color-text-muted: #667085;
+  --color-text-disabled: #98A2B3;
+
+  --color-border-default: #D9E5F2;
+  --color-border-divider: #E6ECF2;
+
+  --color-semantic-success: #15803D;
+  --color-semantic-success-light: #ECFDF3;
+  --color-semantic-danger: #B42318;
+  --color-semantic-danger-light: #FEF3F2;
+  --color-semantic-warning: #B54708;
+  --color-semantic-warning-light: #FFFAEB;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F8FAFC;
+    color: #1E293B;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Restore cursor pointer for interactive elements (Tailwind v4 default change) */
+  button,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="file"],
+  select,
+  summary,
+  a[href],
+  area[href],
+  label[for],
+  label:has(input:not([disabled])),
+  .clickable {
+    cursor: pointer;
+  }
+
+  /* Disabled state cursor override */
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled,
+  [aria-disabled="true"],
+  [disabled],
+  .disabled {
+    cursor: not-allowed !important;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar,
+.table-scroll-viewport::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+*,
+.table-scroll-viewport {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+
+/* Shimmer wave animation for skeleton screens */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(226, 232, 240, 0.6) 0%,
+    rgba(241, 245, 249, 0.95) 50%,
+    rgba(226, 232, 240, 0.6) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.75s ease-in-out infinite;
+  will-change: background-position;
+}
+
+.animate-shimmer-subtle {
+  background: linear-gradient(
+    90deg,
+    rgba(241, 245, 249, 0.7) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(241, 245, 249, 0.7) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.75s ease-in-out infinite;
+  will-change: background-position;
+}
+
+/* Custom slim aesthetic horizontal scrollbar for tables & desktop mouse navigation */
+.custom-scrollbar,
+.custom-horizontal-scrollbar {
+  scrollbar-width: thin !important;
+  scrollbar-color: #cbd5e1 #f1f5f9 !important;
+  -ms-overflow-style: auto !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar,
+.custom-horizontal-scrollbar::-webkit-scrollbar {
+  display: block !important;
+  height: 6px !important;
+  width: 6px !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track,
+.custom-horizontal-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+  border-radius: 9999px !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb,
+.custom-horizontal-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+  border-radius: 9999px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+.custom-horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8 !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active,
+.custom-horizontal-scrollbar::-webkit-scrollbar-thumb:active {
+  background: #64748b !important;
+}
+
+/* Sidebar Submodule & Accordion Transitions */
+.sidebar-accordion-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: grid-template-rows;
+}
+
+.sidebar-accordion-grid.open {
+  grid-template-rows: 1fr;
+}
+
+.sidebar-accordion-content {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.sidebar-accordion-inner {
+  transition: opacity 240ms cubic-bezier(0.4, 0, 0.2, 1), transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top;
+  will-change: opacity, transform;
+}
+
+.sidebar-accordion-grid:not(.open) .sidebar-accordion-inner {
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+}
+
+.sidebar-accordion-grid.open .sidebar-accordion-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+

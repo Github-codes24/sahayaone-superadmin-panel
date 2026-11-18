@@ -1,0 +1,21 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https: http:; frame-src 'self' blob:; object-src 'self' blob:;"
+
+# Proxy all /api requests to backend
+[[redirects]]
+  from = "/api/*"
+  to = "https://devapi.advitacredit.com/api/:splat"
+  status = 200
+  force = true
+
+# SPA fallback routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

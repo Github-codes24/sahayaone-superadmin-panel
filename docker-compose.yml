@@ -1,0 +1,13 @@
+services:
+  bank-panel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL}
+    container_name: advita-superadmin-panel
+    ports:
+      - "127.0.0.1:4174:3000"
+    env_file:
+      - .env
+    restart: always
