@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ChevronRight, ArrowLeft } from 'lucide-react';
 
 /**
- * Standardized PageHeader component for Advita Super Admin Portal.
+ * Standardized PageHeader component for Sahayaone Super Admin Portal.
  * Provides consistent typography, breadcrumbs navigation, and optional back / action buttons.
  *
  * @param {Object} props

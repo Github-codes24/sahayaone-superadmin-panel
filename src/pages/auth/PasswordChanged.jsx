@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BadgeCheck } from 'lucide-react';
 import AuthLayout from '../../components/layouts/AuthLayout';
-import advitaLogo from '../../assets/advita-logo.png';
+import sahayaoneLogo from '../../assets/sahayaone-logo.png';
 
 const PasswordChanged = () => {
   return (
-    <AuthLayout welcomeHeading={"WELCOME TO\nADVITA SUPER ADMIN PORTAL"}>
+    <AuthLayout welcomeHeading={"WELCOME TO\nSAHAYAONE SUPER ADMIN PORTAL"}>
       {/* Top Logo Badge inside Card */}
       <div className="flex flex-col items-center text-center mb-6">
         <div className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-2 flex items-center justify-center shrink-0 w-[54px] h-[54px] mb-3.5">
-          <img src={advitaLogo} alt="Advita Credit" className="w-full h-full object-contain" />
+          <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain" />
         </div>
 
         <div className="mb-3.5 mt-1 text-[#1B4E8C]">

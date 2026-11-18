@@ -39,7 +39,7 @@ export const importantDatesService = {
    * GET /api/v1/super-admin/important-dates
    * 
    * @param {Object} params
-   * @param {string} [params.bankId] - Optional institution/partner bank filter (24-char hex). If omitted, automatically defaults to Advita Corporate.
+   * @param {string} [params.bankId] - Optional institution/partner bank filter (24-char hex). If omitted, automatically defaults to Sahayaone Corporate.
    * @param {string} [params.branchId] - Filter events to a specific branch office.
    * @param {string|string[]} [params.branchIds] - Multiple branch IDs.
    * @param {string|string[]} [params.celebrationTypes] - Birthday, Work Anniversary, Marriage Anniversary.

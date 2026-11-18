@@ -87,7 +87,7 @@ export default function ImportantDates() {
   // Primary Filter States
   const [search, setSearch] = useState('');
   const [debouncedSearch, setDebouncedSearch] = useState('');
-  const [selectedBankId, setSelectedBankId] = useState(''); // '' = Advita Corporate (Default)
+  const [selectedBankId, setSelectedBankId] = useState(''); // '' = Sahayaone Corporate (Default)
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
 
@@ -273,7 +273,7 @@ export default function ImportantDates() {
     search
   );
 
-  // Celebration badge styling helper matching Advita-Cooperative-bank-panel
+  // Celebration badge styling helper matching the corporate bank panel
   const renderCelebrationBadge = (celebrationText, typeText) => {
     const text = celebrationText || typeText || 'Celebration Event';
     const lower = text.toLowerCase();
@@ -356,12 +356,12 @@ export default function ImportantDates() {
     });
   };
 
-  // Quick Wish text generator tailored for Advita Corporate
+  // Quick Wish text generator tailored for Sahayaone Corporate
   const generatedWishText = useMemo(() => {
     if (!activeWishItem) return '';
     const name = activeWishItem.employeeName || 'Colleague';
     const celebration = activeWishItem.celebration || activeWishItem.type || 'Special Day';
-    const org = activeWishItem.bankName ? ` at ${activeWishItem.bankName}` : ' at Advita';
+    const org = activeWishItem.bankName ? ` at ${activeWishItem.bankName}` : ' at Sahayaone';
     
     if (celebration.toLowerCase().includes('birthday')) {
       return `🎉 Wishing you a very Happy ${celebration}, ${name}! May your day be filled with joy, good health, and continued success${org}! ✨`;
@@ -432,7 +432,7 @@ export default function ImportantDates() {
             </div>
           </div>
           <div className="mt-2 text-[11px] font-semibold text-purple-600">
-            {selectedBankId ? 'Scoped to selected partner institution' : 'All Advita corporate staff milestones'}
+            {selectedBankId ? 'Scoped to selected partner institution' : 'All Sahayaone corporate staff milestones'}
           </div>
         </div>
 
@@ -555,7 +555,7 @@ export default function ImportantDates() {
                 onChange={(e) => setSelectedBankId(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 text-[13px] text-gray-700 font-semibold focus:outline-none focus:border-[#225091] bg-white shadow-2xs cursor-pointer"
               >
-                <option value="">Advita Corporate Staff (Default)</option>
+                <option value="">Sahayaone Corporate Staff (Default)</option>
                 {bankOptions.map((b) => (
                   <option key={b._id || b.id} value={b._id || b.id}>
                     Partner: {b.bankName || b.name} {b.bankCode ? `(${b.bankCode})` : ''}
@@ -699,7 +699,7 @@ export default function ImportantDates() {
                     <div className="flex flex-col items-center justify-center gap-2.5">
                       <Loader2 className="animate-spin text-[#225091]" size={28} />
                       <span className="text-sm font-semibold text-gray-700">Loading important dates feed...</span>
-                      <span className="text-xs text-gray-400">Querying Advita corporate onboarding & administrative staff milestones</span>
+                      <span className="text-xs text-gray-400">Querying Sahayaone corporate onboarding & administrative staff milestones</span>
                     </div>
                   </td>
                 </tr>
@@ -724,8 +724,8 @@ export default function ImportantDates() {
                   const state = row.state || '—';
                   const branch = row.branch || row.branchName || '—';
                   const celebration = row.celebration || row.type || 'Celebration';
-                  const bankName = row.bankName || 'Advita Urban Multistate Co-operative Society Ltd';
-                  const bankCode = row.bankCode || 'ADVITA';
+                  const bankName = row.bankName || 'Sahayaone Urban Multistate Co-operative Society Ltd';
+                  const bankCode = row.bankCode || 'SAHAYAONE';
                   const bankLogo = row.bankLogo || '';
 
                   return (

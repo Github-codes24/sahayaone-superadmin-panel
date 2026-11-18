@@ -1,0 +1,1 @@
+var e=`/assets/sahayaone-logo-B01dG1GV.png`;export{e as t};

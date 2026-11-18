@@ -6,7 +6,7 @@ import { authService } from '../../api/authService';
 import loginIllustration from '../../assets/images/login.png';
 import { UserCog, User, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { validateEmail, validatePassword } from '../../utils/validation';
-import advitaLogo from '../../assets/advita-logo.png';
+import sahayaoneLogo from '../../assets/sahayaone-logo.png';
 
 const Login = () => {
   const [roles, setRoles] = useState([]);
@@ -84,13 +84,13 @@ const Login = () => {
 
   return (
     <AuthLayout 
-      welcomeHeading={"WELCOME TO\nADVITA SUPER ADMIN PORTAL"}
+      welcomeHeading={"WELCOME TO\nSAHAYAONE SUPER ADMIN PORTAL"}
       illustration={<img src={loginIllustration} alt="Login Illustration" className="w-full h-auto object-contain drop-shadow-xl" />}
     >
       {/* Top Logo Badge inside Card */}
       <div className="flex flex-col items-center text-center mb-6">
         <div className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-2 flex items-center justify-center shrink-0 w-[54px] h-[54px] mb-3.5">
-          <img src={advitaLogo} alt="Advita Credit" className="w-full h-full object-contain" />
+          <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain" />
         </div>
 
         <h2 className="text-[22px] sm:text-[24px] font-black tracking-wide uppercase leading-tight">
