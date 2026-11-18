@@ -131,10 +131,10 @@ const INITIAL_KRA_RATINGS = [
 ];
 
 const DEFAULT_CORPORATE_OFFICES = [
-  { id: '66ce7a901234567890abc999', name: 'Advita Corporate Head Office, Pune', city: 'Pune', state: 'Maharashtra' },
-  { id: '66ce7a901234567890abc002', name: 'Advita Regional Office, Mumbai', city: 'Mumbai', state: 'Maharashtra' },
-  { id: '66ce7a901234567890abc998', name: 'Advita Zonal Center, Nagpur', city: 'Nagpur', state: 'Maharashtra' },
-  { id: '66ce7a901234567890abc997', name: 'Advita Regional Desk, Nashik', city: 'Nashik', state: 'Maharashtra' }
+  { id: '66ce7a901234567890abc999', name: 'Sahayaone Corporate Head Office, Pune', city: 'Pune', state: 'Maharashtra' },
+  { id: '66ce7a901234567890abc002', name: 'Sahayaone Regional Office, Mumbai', city: 'Mumbai', state: 'Maharashtra' },
+  { id: '66ce7a901234567890abc998', name: 'Sahayaone Zonal Center, Nagpur', city: 'Nagpur', state: 'Maharashtra' },
+  { id: '66ce7a901234567890abc997', name: 'Sahayaone Regional Desk, Nashik', city: 'Nashik', state: 'Maharashtra' }
 ];
 
 const DEFAULT_ROLES = [
@@ -212,7 +212,7 @@ const SearchableEmployeeSelect = ({ employees, selectedEmployeeId, onSelect, loa
           </div>
         ) : (
           <span className="text-gray-400 font-medium">
-            {loading ? 'Loading Advita staff directory...' : '-- Choose Corporate Employee from Directory --'}
+            {loading ? 'Loading Sahayaone staff directory...' : '-- Choose Corporate Employee from Directory --'}
           </span>
         )}
         <div className="flex items-center gap-2 shrink-0 ml-2">
@@ -251,7 +251,7 @@ const SearchableEmployeeSelect = ({ employees, selectedEmployeeId, onSelect, loa
           <div className="max-h-64 overflow-y-auto divide-y divide-gray-50 space-y-0.5 pr-1">
             {filteredEmployees.length === 0 ? (
               <div className="py-8 text-center text-xs text-gray-400 font-medium">
-                No matching staff found in Advita corporate directory.
+                No matching staff found in Sahayaone corporate directory.
               </div>
             ) : (
               filteredEmployees.map((emp) => {
@@ -676,7 +676,7 @@ export const LettersAndPayroll = () => {
   const [offerJoiningDate, setOfferJoiningDate] = useState('');
   const [offerAnnualSalary, setOfferAnnualSalary] = useState('');
   const [offerDepartment, setOfferDepartment] = useState('Client Operations & Onboarding');
-  const [offerPlaceOfPosting, setOfferPlaceOfPosting] = useState('Advita Corporate Head Office, Pune');
+  const [offerPlaceOfPosting, setOfferPlaceOfPosting] = useState('Sahayaone Corporate Head Office, Pune');
   const [offerEmploymentType, setOfferEmploymentType] = useState('Full-Time Permanent');
   const [offerReportingManager, setOfferReportingManager] = useState('Vice President - Operations');
 
@@ -702,7 +702,7 @@ export const LettersAndPayroll = () => {
   const [promoReportingManager, setPromoReportingManager] = useState('Vice President - Operations');
 
   // Transfer Letter Fields
-  const [transferToOffice, setTransferToOffice] = useState('Advita Regional Office, Mumbai');
+  const [transferToOffice, setTransferToOffice] = useState('Sahayaone Regional Office, Mumbai');
   const [transferToBranchId, setTransferToBranchId] = useState('');
   const [transferEffectiveDate, setTransferEffectiveDate] = useState('');
   const [transferReportingDate, setTransferReportingDate] = useState('');
@@ -843,7 +843,7 @@ export const LettersAndPayroll = () => {
     }
   }, [location.state]);
 
-  // 3. Fetch Advita Corporate Staff (OnboardingTeam & Admin Staff)
+  // 3. Fetch Sahayaone Corporate Staff (OnboardingTeam & Admin Staff)
   const loadCorporateStaff = useCallback(async () => {
     setFetchingEmployees(true);
     try {
@@ -865,7 +865,7 @@ export const LettersAndPayroll = () => {
         setCurrentEmployee(null);
       }
     } catch (err) {
-      console.warn('Failed to load Advita corporate staff:', err);
+      console.warn('Failed to load Sahayaone corporate staff:', err);
       setEmployees([]);
     } finally {
       setFetchingEmployees(false);
@@ -889,7 +889,7 @@ export const LettersAndPayroll = () => {
       setOfferDesignation(emp.designation || emp.role?.name || emp.role || 'Senior Onboarding Specialist');
       setOfferAnnualSalary(emp.salary ? String(emp.salary) : '650000');
       setOfferDepartment(emp.department || 'Client Operations & Onboarding');
-      setOfferPlaceOfPosting(emp.placeOfPosting || emp.branchName || 'Advita Corporate Head Office, Pune');
+      setOfferPlaceOfPosting(emp.placeOfPosting || emp.branchName || 'Sahayaone Corporate Head Office, Pune');
       setOfferEmploymentType('Full-Time Permanent');
       setOfferReportingManager(emp.reportingManager || 'Vice President - Operations');
       setIncCurrentCtc(emp.salary ? String(emp.salary) : '600000');
@@ -903,7 +903,7 @@ export const LettersAndPayroll = () => {
       setPromoDepartment(emp.department || 'Client Operations & Onboarding');
       setPromoRevisedCtc(String(Math.round(salaryNum * 1.2)));
       setPromoEffectiveDate(new Date().toISOString().split('T')[0]);
-      setTransferToOffice('Advita Regional Office, Mumbai');
+      setTransferToOffice('Sahayaone Regional Office, Mumbai');
       setTransferEffectiveDate(new Date().toISOString().split('T')[0]);
       const nextDay = new Date();
       nextDay.setDate(nextDay.getDate() + 1);
@@ -1244,7 +1244,7 @@ export const LettersAndPayroll = () => {
       return;
     }
     if (!selectedEmployeeId) {
-      toast.warning('Please select an Advita corporate employee first.');
+      toast.warning('Please select a Sahayaone corporate employee first.');
       return;
     }
 
@@ -1274,7 +1274,7 @@ export const LettersAndPayroll = () => {
             annualSalary: Number(offerAnnualSalary) || Number(currentEmployee?.salary) || 650000,
             salary: Number(offerAnnualSalary) || Number(currentEmployee?.salary) || 650000,
             department: offerDepartment.trim() || currentEmployee?.department || 'Client Operations & Onboarding',
-            placeOfPosting: offerPlaceOfPosting.trim() || currentEmployee?.placeOfPosting || 'Advita Corporate Head Office, Pune',
+            placeOfPosting: offerPlaceOfPosting.trim() || currentEmployee?.placeOfPosting || 'Sahayaone Corporate Head Office, Pune',
             employmentType: offerEmploymentType || 'Full-Time Permanent',
             reportingManager: offerReportingManager.trim() || 'Vice President - Operations'
           };
@@ -1320,7 +1320,7 @@ export const LettersAndPayroll = () => {
         case 'Transfer Letter':
           payload = { 
             ...payload, 
-            transferToOffice: transferToOffice.trim() || 'Advita Regional Office, Mumbai',
+            transferToOffice: transferToOffice.trim() || 'Sahayaone Regional Office, Mumbai',
             transferToBranchId: transferToBranchId || undefined, 
             transferDate: transferEffectiveDate,
             effectiveDate: transferEffectiveDate, 
@@ -1384,7 +1384,7 @@ export const LettersAndPayroll = () => {
         const jsonResponse = await letterService.generate(payload, { format: 'json' });
         const metadata = jsonResponse?.data || jsonResponse;
         setLastGeneratedMetadata(metadata);
-        const refNum = metadata?.referenceNumber || `ADVITA/HR/${DOCUMENT_TYPE_CODES[selectedLetterType]?.slice(0, 4) || 'DOC'}/2026/${Date.now().toString().slice(-3)}`;
+        const refNum = metadata?.referenceNumber || `SAHAYAONE/HR/${DOCUMENT_TYPE_CODES[selectedLetterType]?.slice(0, 4) || 'DOC'}/2026/${Date.now().toString().slice(-3)}`;
         setGeneratedRefNo(refNum);
         setGeneratedDocTitle(`${selectedLetterType}_${(empName).replace(/\s+/g, '_')}`);
         if (metadata?.fileUrl) {
@@ -1407,7 +1407,7 @@ export const LettersAndPayroll = () => {
       const blobUrl = URL.createObjectURL(blob);
       setGeneratedPdfUrl(blobUrl);
 
-      const refNum = blob?.referenceNumber || `ADVITA/HR/${DOCUMENT_TYPE_CODES[selectedLetterType]?.slice(0, 4) || 'DOC'}/2026/${Date.now().toString().slice(-3)}`;
+      const refNum = blob?.referenceNumber || `SAHAYAONE/HR/${DOCUMENT_TYPE_CODES[selectedLetterType]?.slice(0, 4) || 'DOC'}/2026/${Date.now().toString().slice(-3)}`;
       setGeneratedRefNo(refNum);
       setGeneratedDocTitle(`${selectedLetterType}_${(empName).replace(/\s+/g, '_')}`);
 
@@ -1620,7 +1620,7 @@ export const LettersAndPayroll = () => {
          ========================================================================= */}
       {activeTab === 'generate' && (
         <div className="flex flex-col gap-5">
-          {/* Official Advita Corporate Letterhead Banner */}
+          {/* Official Sahayaone Corporate Letterhead Banner */}
           <div className="bg-gradient-to-r from-[#1b2559] via-[#225091] to-[#1e3a8a] text-white border border-blue-900/40 rounded-2xl p-5 shadow-sm">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
               <div className="flex items-start gap-3.5">
@@ -1630,14 +1630,14 @@ export const LettersAndPayroll = () => {
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-[11px] font-extrabold uppercase tracking-widest text-amber-300 bg-amber-400/10 px-2.5 py-0.5 rounded-md border border-amber-300/20">
-                      Official Advita Corporate Letterhead
+                      Official Sahayaone Corporate Letterhead
                     </span>
                     <span className="text-[10px] font-semibold text-blue-200 bg-white/10 px-2 py-0.5 rounded-full">
-                      Direct Advita Corporate Staff • No Bank Association Required
+                      Direct Sahayaone Corporate Staff • No Bank Association Required
                     </span>
                   </div>
                   <h3 className="text-base sm:text-lg font-black tracking-tight text-white mt-1">
-                    Advita Urban Multistate Credit Co-operative Society Ltd.
+                    Sahayaone Urban Multistate Credit Co-operative Society Ltd.
                   </h3>
                   <div className="text-xs text-blue-100/80 mt-0.5 flex items-center gap-2 flex-wrap">
                     <span>Head Office: A-303, Swagat Enclave Housing Society, Jambhulwadi Road, Pune – 411046, Maharashtra</span>
@@ -1654,7 +1654,7 @@ export const LettersAndPayroll = () => {
                 <div className="text-xs pr-2">
                   <span className="text-[10px] uppercase font-bold text-blue-200 block">Reference No. Standard</span>
                   <span className="font-mono font-bold text-amber-300 text-xs">
-                    ADVITA/HR/{LETTER_TYPES.find(l => l.id === selectedLetterType)?.code || 'DOC'}/2026/001
+                    SAHAYAONE/HR/{LETTER_TYPES.find(l => l.id === selectedLetterType)?.code || 'DOC'}/2026/001
                   </span>
                 </div>
                 <div className="flex items-center gap-1 bg-white/10 p-1 rounded-lg border border-white/10 text-xs">
@@ -1718,7 +1718,7 @@ export const LettersAndPayroll = () => {
                   <div className="flex items-center justify-between">
                     <label className="text-xs font-bold text-gray-800 uppercase tracking-wider flex items-center gap-2">
                       <span className="w-5 h-5 rounded-full bg-[#225091] text-white text-[11px] font-bold flex items-center justify-center">2</span>
-                      <span>Select Advita Corporate Employee</span>
+                      <span>Select Sahayaone Corporate Employee</span>
                       <span className="text-rose-500">*</span>
                     </label>
                     <span className="text-[11px] text-gray-500">
@@ -2011,7 +2011,7 @@ export const LettersAndPayroll = () => {
                             required
                             value={transferToOffice}
                             onChange={(e) => setTransferToOffice(e.target.value)}
-                            placeholder="e.g. Advita Regional Office, Mumbai"
+                            placeholder="e.g. Sahayaone Regional Office, Mumbai"
                             className="flex-1 px-3.5 py-2.5 bg-gray-50/70 focus:bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-1 focus:ring-[#225091]"
                           />
                           <select
@@ -2288,7 +2288,7 @@ export const LettersAndPayroll = () => {
                   )}
                 </div>
 
-                {/* Step 4: Official Advita Corporate Authorized Signatory */}
+                {/* Step 4: Official Sahayaone Corporate Authorized Signatory */}
                 <div className="pt-4 border-t border-gray-100 space-y-3">
                   <div className="flex items-center justify-between">
                     <label className="text-xs font-bold text-gray-800 uppercase tracking-wider flex items-center gap-2">
@@ -2296,7 +2296,7 @@ export const LettersAndPayroll = () => {
                       <span>Authorized Corporate Signatory</span>
                     </label>
                     <span className="text-[11px] text-gray-500">
-                      Advita Corporate Head Office, Pune letterhead
+                      Sahayaone Corporate Head Office, Pune letterhead
                     </span>
                   </div>
 
@@ -2556,7 +2556,7 @@ export const LettersAndPayroll = () => {
                   <tr>
                     <td colSpan={7} className="py-12 text-center text-gray-400 font-medium">
                       <FileText size={32} className="mx-auto mb-2 opacity-50" />
-                      <span>No Advita staff letter logs found matching the filter criteria.</span>
+                      <span>No Sahayaone staff letter logs found matching the filter criteria.</span>
                     </td>
                   </tr>
                 ) : (
@@ -2583,7 +2583,7 @@ export const LettersAndPayroll = () => {
                           </div>
                         </td>
                         <td className="py-3.5 px-4 text-gray-600">
-                          {item.branchName || 'Advita Corporate Head Office, Pune'}
+                          {item.branchName || 'Sahayaone Corporate Head Office, Pune'}
                         </td>
                         <td className="py-3.5 px-4">
                           <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${docTypeConfig ? docTypeConfig.badgeColor : 'bg-gray-50 text-gray-700 border-gray-200'}`}>
@@ -2694,7 +2694,7 @@ export const LettersAndPayroll = () => {
               </div>
               <h2 className="text-xl font-extrabold tracking-tight">Tenant Client Bank Signature Settings</h2>
               <p className="text-xs text-blue-100/90 leading-relaxed">
-                Administrative configuration for tenant client co-operative banks. Upload official PNG stamps and set signatory profiles for client banks (rendered in the Society Panel). Letters issued for direct Advita corporate staff use Advita's own official letterhead.
+                Administrative configuration for tenant client co-operative banks. Upload official PNG stamps and set signatory profiles for client banks (rendered in the Society Panel). Letters issued for direct Sahayaone corporate staff use Sahayaone's own official letterhead.
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-3 text-xs text-white shrink-0 min-w-[220px]">
@@ -3132,7 +3132,7 @@ export const LettersAndPayroll = () => {
                       {sigSignatoryDesignation.trim() || 'Head - Human Resources'}
                     </div>
                     <div className="text-[10px] text-gray-500 font-medium mt-0.5">
-                      {selectedBank?.bankName || 'Advita Co-operative Bank Society Ltd.'}
+                      {selectedBank?.bankName || 'Sahayaone Co-operative Bank Society Ltd.'}
                     </div>
                   </div>
                 </div>

@@ -29,7 +29,7 @@ import useAuthStore from '../../store/authStore';
 import useLoadingStore from '../../store/loadingStore';
 import { useNotificationStore } from '../../store/notificationStore';
 import GlobalLoader from '../GlobalLoader';
-import advitaLogo from '../../assets/advita-logo.png';
+import sahayaoneLogo from '../../assets/sahayaone-logo.png';
 
 // Route prefetch map for instantaneous 0ms transitions on click
 const prefetchMap = {
@@ -340,10 +340,10 @@ const DashboardLayout = () => {
               title="Go to Dashboard"
             >
               {/* Logo Image */}
-              <img src={advitaLogo} alt="Advita Credit" className="h-9 w-auto object-contain shrink-0" />
+              <img src={sahayaoneLogo} alt="Sahayaone" className="h-9 w-auto object-contain shrink-0" />
               {/* Logo Text */}
               <div className="flex flex-col text-[#225091]">
-                <span className="font-extrabold text-[17px] leading-tight tracking-wide whitespace-nowrap">ADVITA CREDIT</span>
+                <span className="font-extrabold text-[17px] leading-tight tracking-wide whitespace-nowrap">SAHAYAONE</span>
                 <span className="font-bold text-[10px] leading-tight tracking-wider text-gray-500 whitespace-nowrap">SUPER ADMIN PORTAL</span>
               </div>
             </Link>

@@ -280,8 +280,8 @@ export const letterService = {
     }
   },
 
-  // 12. Corporate Advita Staff Loader
-  // Scoped strictly to Advita Internal Corporate Staff: OnboardingTeam & Admin/SubAdmin
+  // 12. Corporate Sahayaone Staff Loader
+  // Scoped strictly to Sahayaone Internal Corporate Staff: OnboardingTeam & Admin/SubAdmin
   fetchAdvitaCorporateStaff: async () => {
     const staffList = [];
 
@@ -307,8 +307,8 @@ export const letterService = {
           department: m.department || 'Client Operations & Onboarding',
           salary: Number(m.salary) || Number(m.ctc) || 650000,
           joiningDate: m.joiningDate || m.createdAt,
-          placeOfPosting: m.branch?.name || m.branchName || 'Advita Corporate Head Office, Pune',
-          branchName: m.branch?.name || m.branchName || 'Advita Corporate Head Office, Pune',
+          placeOfPosting: m.branch?.name || m.branchName || 'Sahayaone Corporate Head Office, Pune',
+          branchName: m.branch?.name || m.branchName || 'Sahayaone Corporate Head Office, Pune',
           branchCity: m.branch?.city || m.branchCity || 'Pune',
           branchState: m.branch?.state || m.branchState || 'Maharashtra'
         });
@@ -342,8 +342,8 @@ export const letterService = {
             department: a.department || 'Corporate Management & Operations',
             salary: Number(a.salary) || Number(a.ctc) || 850000,
             joiningDate: a.joiningDate || a.createdAt,
-            placeOfPosting: 'Advita Corporate Head Office, Pune',
-            branchName: 'Advita Corporate Head Office, Pune',
+            placeOfPosting: 'Sahayaone Corporate Head Office, Pune',
+            branchName: 'Sahayaone Corporate Head Office, Pune',
             branchCity: 'Pune',
             branchState: 'Maharashtra'
           });

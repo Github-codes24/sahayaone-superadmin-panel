@@ -1,7 +1,7 @@
 import React from 'react';
-import advitaLogo from '../../assets/advita-logo.png';
+import sahayaoneLogo from '../../assets/sahayaone-logo.png';
 
-const AuthLayout = ({ children, illustration, welcomeHeading = "WELCOME TO\nADVITA SUPER ADMIN PORTAL" }) => {
+const AuthLayout = ({ children, illustration, welcomeHeading = "WELCOME TO\nSAHAYAONE SUPER ADMIN PORTAL" }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1b4e8c] via-[#174378] to-[#133866] flex items-center justify-center p-4 sm:p-6 lg:p-10 font-sans antialiased select-none">
       <div className="w-full max-w-6xl flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
@@ -11,7 +11,7 @@ const AuthLayout = ({ children, illustration, welcomeHeading = "WELCOME TO\nADVI
           {/* Header Banner with Logo and Welcome Title */}
           <div className="flex items-center gap-4 mb-6">
             <div className="bg-white rounded-[16px] shadow-lg p-2.5 flex items-center justify-center shrink-0 w-[60px] h-[60px] border border-white/20">
-              <img src={advitaLogo} alt="Advita Credit" className="w-full h-full object-contain" />
+              <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain" />
             </div>
             
             <div className="flex flex-col">
@@ -43,10 +43,10 @@ const AuthLayout = ({ children, illustration, welcomeHeading = "WELCOME TO\nADVI
         <div className="lg:hidden flex flex-col items-center text-center mb-4">
           <div className="flex items-center gap-3.5">
             <div className="bg-white rounded-[14px] shadow-md p-2 flex items-center justify-center shrink-0 w-12 h-12">
-              <img src={advitaLogo} alt="Advita Credit" className="w-full h-full object-contain" />
+              <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain" />
             </div>
             <h1 className="text-white text-lg sm:text-xl font-black tracking-wider uppercase text-left leading-tight">
-              ADVITA SUPER ADMIN<br />PORTAL
+              SAHAYAONE SUPER ADMIN<br />PORTAL
             </h1>
           </div>
           <div className="w-24 h-[3px] bg-[#ef3b3a] rounded-full mt-2.5"></div>

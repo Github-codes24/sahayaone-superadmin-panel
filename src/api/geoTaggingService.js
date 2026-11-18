@@ -39,7 +39,7 @@ export const geoTaggingService = {
           assignedRegion: 'Pune Metropolitan Region',
           officeLat: 18.520400,
           officeLng: 73.856700,
-          officeAddress: 'Advita Credit HQ, FC Road, Pune - 411005',
+          officeAddress: 'Sahayaone HQ, FC Road, Pune - 411005',
           punchInTime: '2026-09-02T09:02:00Z',
           punchOutTime: null,
           punchLat: 18.520420,
