@@ -68,8 +68,8 @@ const ResetPassword = () => {
       >
         {/* Top Logo Badge inside Card */}
         <div className="flex flex-col items-center text-center mb-6">
-          <div className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-2 flex items-center justify-center shrink-0 w-[54px] h-[54px] mb-3.5">
-            <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain" />
+          <div className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-1 flex items-center justify-center shrink-0 w-[160px] h-[56px] mb-3.5">
+            <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain object-center" />
           </div>
 
           <h2 className="text-[22px] sm:text-[24px] font-black tracking-wide uppercase leading-tight">

@@ -336,15 +336,11 @@ const DashboardLayout = () => {
             <Link
               to="/dashboard"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center gap-3 hover:opacity-90 transition-opacity cursor-pointer group"
+              className="flex w-full items-center justify-center hover:opacity-90 transition-opacity cursor-pointer group"
               title="Go to Dashboard"
             >
-              {/* Logo Image */}
-              <img src={sahayaoneLogo} alt="Sahayaone" className="h-9 w-auto object-contain shrink-0" />
-              {/* Logo Text */}
-              <div className="flex flex-col text-[#225091]">
-                <span className="font-extrabold text-[17px] leading-tight tracking-wide whitespace-nowrap">SAHAYAONE</span>
-                <span className="font-bold text-[10px] leading-tight tracking-wider text-gray-500 whitespace-nowrap">SUPER ADMIN PORTAL</span>
+              <div className="flex h-[56px] w-[184px] shrink-0 items-center justify-center rounded-lg bg-white p-1">
+                <img src={sahayaoneLogo} alt="Sahayaone" className="h-full w-full object-contain object-center" />
               </div>
             </Link>
             {/* Mobile Close Button */}
