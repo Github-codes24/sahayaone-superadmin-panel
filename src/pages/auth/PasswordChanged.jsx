@@ -9,8 +9,8 @@ const PasswordChanged = () => {
     <AuthLayout welcomeHeading={"WELCOME TO\nSAHAYAONE SUPER ADMIN PORTAL"}>
       {/* Top Logo Badge inside Card */}
       <div className="flex flex-col items-center text-center mb-6">
-        <div className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-2 flex items-center justify-center shrink-0 w-[54px] h-[54px] mb-3.5">
-          <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain" />
+        <div className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-1 flex items-center justify-center shrink-0 w-[160px] h-[56px] mb-3.5">
+          <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain object-center" />
         </div>
 
         <div className="mb-3.5 mt-1 text-[#1B4E8C]">

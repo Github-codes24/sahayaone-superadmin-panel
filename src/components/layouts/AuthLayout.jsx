@@ -10,15 +10,24 @@ const AuthLayout = ({ children, illustration, welcomeHeading = "WELCOME TO\nSAHA
         <div className="hidden lg:flex flex-1 flex-col items-start justify-center pl-4 max-w-xl">
           {/* Header Banner with Logo and Welcome Title */}
           <div className="flex items-center gap-4 mb-6">
-            <div className="bg-white rounded-[16px] shadow-lg p-2.5 flex items-center justify-center shrink-0 w-[60px] h-[60px] border border-white/20">
-              <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain" />
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-white p-1 shadow-lg">
+              <img src={sahayaoneLogo} alt="Sahayaone" className="h-full w-full object-contain object-center" />
             </div>
             
-            <div className="flex flex-col">
-              <h1 className="text-white text-2xl xl:text-[28px] font-black tracking-wider uppercase leading-tight whitespace-pre-line drop-shadow-md">
-                {welcomeHeading}
+            <div className="relative flex min-w-0 flex-col">
+              <h1 className="uppercase leading-tight text-white drop-shadow-md">
+                {welcomeHeading.split('\n').map((line, index) => (
+                  <span
+                    key={`${line}-${index}`}
+                    className={index === 0
+                      ? 'block text-lg font-semibold tracking-[0.12em] text-white/90'
+                      : 'block text-xl font-bold tracking-wide xl:text-2xl'}
+                  >
+                    {line}
+                  </span>
+                ))}
               </h1>
-              <div className="w-32 h-[3.5px] bg-[#ef3b3a] rounded-full mt-2.5 shadow-sm"></div>
+              <div className="absolute -bottom-3.5 left-0 h-[3.5px] w-32 rounded-full bg-[#ef3b3a] shadow-sm"></div>
             </div>
           </div>
 
@@ -41,11 +50,11 @@ const AuthLayout = ({ children, illustration, welcomeHeading = "WELCOME TO\nSAHA
 
         {/* Mobile Header Banner (Visible only on mobile/tablet) */}
         <div className="lg:hidden flex flex-col items-center text-center mb-4">
-          <div className="flex items-center gap-3.5">
-            <div className="bg-white rounded-[14px] shadow-md p-2 flex items-center justify-center shrink-0 w-12 h-12">
-              <img src={sahayaoneLogo} alt="Sahayaone" className="w-full h-full object-contain" />
+          <div className="flex flex-col items-center gap-2">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white p-1 shadow-md">
+              <img src={sahayaoneLogo} alt="Sahayaone" className="h-full w-full object-contain object-center" />
             </div>
-            <h1 className="text-white text-lg sm:text-xl font-black tracking-wider uppercase text-left leading-tight">
+            <h1 className="text-white text-lg sm:text-xl font-black tracking-wider uppercase text-center leading-tight">
               SAHAYAONE SUPER ADMIN<br />PORTAL
             </h1>
           </div>
