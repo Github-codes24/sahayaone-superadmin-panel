@@ -1,1 +1,0 @@
-import{t as e}from"./axiosConfig-CKbJrTsN.js";var t={getCashPayments:async t=>(await e.get(`/v1/super-admin/cash-payment`,{params:t})).data,getCashPaymentDetails:async(t,n)=>(await e.get(`/v1/super-admin/cash-payment/${t}`,{params:n})).data,submitCash:async(t,n)=>(await e.post(`/v1/super-admin/cash-payment/${t}/submit-cash`,n)).data};export{t};
