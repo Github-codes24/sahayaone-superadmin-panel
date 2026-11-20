@@ -10,7 +10,7 @@ import Pagination from '../../components/common/Pagination';
 const getImageUrl = (url) => {
   if (!url) return '';
   if (url.startsWith('http') || url.startsWith('data:')) return url;
-  const baseUrl = (import.meta.env.VITE_API_URL || 'https://devapi.advitacredit.com').replace(/\/api\/?$/, '');
+  const baseUrl = (import.meta.env.VITE_API_URL || 'https://devapi.sahayaone.com/').replace(/\/api\/?$/, '');
   return `${baseUrl}${url.startsWith('/') ? '' : '/'}${url}`;
 };
 

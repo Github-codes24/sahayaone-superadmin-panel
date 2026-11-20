@@ -10,7 +10,7 @@
 # Proxy all /api requests to backend
 [[redirects]]
   from = "/api/*"
-  to = "https://devapi.advitacredit.com/api/:splat"
+  to = "https://devapi.sahayaone.com/api/:splat"
   status = 200
   force = true
 
